@@ -12,6 +12,6 @@ data_*/
 godot-cpp/*
 .vscode/*
 src/.vs/*
-demo/bin/.vs/*
-demo/bin/win64/*
+godot_project/bin/.vs/*
+godot_project/bin/win64/*
 SConstruct_OLD

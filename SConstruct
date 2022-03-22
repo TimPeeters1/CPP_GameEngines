@@ -13,7 +13,7 @@ opts.Add(EnumVariable('target', "Compilation target", 'debug', ['d', 'debug', 'r
 opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
-opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'demo/bin/'))
+opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'godot_project/bin/'))
 opts.Add(PathVariable('target_name', 'The library name.', 'libgdexample', PathVariable.PathAccept))
 
 # Local dependency paths, adapt them to your setup
@@ -160,7 +160,7 @@ for filename in files:
 
     gdns += "library = ExtResource( 1 )\n"  
 
-    gdnsFile = os.getcwd() + "/demo/bin/" + filename[0:-2] + ".gdns"
+    gdnsFile = os.getcwd() + "/godot_project/bin/" + filename[0:-2] + ".gdns"
     os.makedirs(os.path.dirname(gdnsFile), exist_ok=True)
     with open(gdnsFile, "w") as f1:
         f1.write(gdns)
