@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/Road.tscn" type="PackedScene" id=1]
-[ext_resource path="res://PlayerVehicle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bin/player.gdns" type="Script" id=3]
-
-[sub_resource type="Environment" id=1]
-background_mode = 1
-background_color = Color( 0, 0.905882, 1, 1 )
-ssao_enabled = true
+[ext_resource path="res://ModelScenes/Road.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameplayScenes/SpawnArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameplayScenes/PlayerVehicle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GDScripts/PlayerVehicle.gd" type="Script" id=4]
+[ext_resource path="res://GameScenes/MainEnv.tres" type="Environment" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -16,14 +13,14 @@ transform = Transform( -0.725862, -0.593928, 0.34695, 0.520524, -0.14457, 0.8415
 light_energy = 10.0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.67429, -0.386891, 0.629006, 0, 0.851773, 0.523912, -0.738467, -0.353268, 0.574341, 8.40319, 11.3346, 8.4434 )
+transform = Transform( 0.868251, -0.175724, 0.463963, 0, 0.935172, 0.354193, -0.496126, -0.307528, 0.811964, 14.891, 12.208, 12.826 )
 projection = 1
 size = 25.0
 near = 0.01
-far = 1000.0
+far = 200.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = ExtResource( 5 )
 
 [node name="RoadMain" type="Spatial" parent="."]
 
@@ -41,6 +38,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27 )
 [node name="Road5" parent="RoadMain" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9 )
 
+[node name="Road11" parent="RoadMain" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18 )
+
+[node name="Road12" parent="RoadMain" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27 )
+
+[node name="Road13" parent="RoadMain" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36 )
+
+[node name="Road14" parent="RoadMain" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45 )
+
 [node name="Road6" parent="RoadMain" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
 
@@ -56,5 +65,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -72 )
 [node name="Road10" parent="RoadMain" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36 )
 
-[node name="PlayerVehicle" parent="." instance=ExtResource( 2 )]
-script = ExtResource( 3 )
+[node name="PlayerVehicle" parent="." instance=ExtResource( 3 )]
+axis_lock_motion_z = true
+move_lock_z = true
+motion/sync_to_physics = false
+script = ExtResource( 4 )
+movementSpeed = 5
+acceleration = 0.2
+
+[node name="SpawnArea" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0354598, 1.24387, -22.1731 )
+minSpawnTime = 1
+maxSpawnTime = 1
