@@ -8,6 +8,12 @@ export var gravity = 30;
 
 var velocity = Vector3(0,0,0)
 
+var GameManager = null;
+
+func _ready():
+	#Should be replaced by signal later.
+	GameManager = get_node("/root/Main/GameManager");
+	
 func get_input():
 	var input_direction = 0
 	if Input.is_action_pressed("Player_Right"):

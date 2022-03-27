@@ -19,7 +19,7 @@ shape = SubResource( 1 )
 transform = Transform( 0.01, 0, 0, 0, -3.57628e-09, -0.00999999, 0, 0.01, -3.57628e-09, 0, 6.55654e-09, -0.0150001 )
 
 [node name="Area" type="Area" parent="."]
-collision_mask = 2
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]

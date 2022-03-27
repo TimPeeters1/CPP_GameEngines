@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ModelScenes/Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameplayScenes/SpawnArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameplayScenes/PlayerVehicle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GDScripts/PlayerVehicle.gd" type="Script" id=4]
 [ext_resource path="res://GameScenes/MainEnv.tres" type="Environment" id=5]
+[ext_resource path="res://GameplayScenes/GameManager.tscn" type="PackedScene" id=6]
 
-[node name="Spatial" type="Spatial"]
+[node name="Main" type="Spatial"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.725862, -0.593928, 0.34695, 0.520524, -0.14457, 0.841519, -0.449643, 0.791422, 0.414092, 0, 0, 0 )
@@ -77,3 +78,20 @@ acceleration = 0.2
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0354598, 1.24387, -22.1731 )
 minSpawnTime = 1
 maxSpawnTime = 1
+
+[node name="GameManager" parent="." instance=ExtResource( 6 )]
+
+[node name="UI" type="Control" parent="GameManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameManager/UI"]
+margin_left = 45.0
+margin_top = 30.0
+text = "Score: 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
