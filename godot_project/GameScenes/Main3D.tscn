@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ModelScenes/Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameplayScenes/SpawnArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameplayScenes/PlayerVehicle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GDScripts/PlayerVehicle.gd" type="Script" id=4]
 [ext_resource path="res://GameScenes/MainEnv.tres" type="Environment" id=5]
 [ext_resource path="res://GameplayScenes/GameManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameplayScenes/EnemyKillzone.tscn" type="PackedScene" id=7]
@@ -73,12 +72,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -72 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -36 )
 
 [node name="PlayerVehicle" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.188, 0 )
 axis_lock_motion_z = true
 move_lock_z = true
 motion/sync_to_physics = false
-script = ExtResource( 4 )
-movementSpeed = 5
-acceleration = 0.2
+movementSpeed = 5.0
+friction = 0.1
+acceleration = 0.1
 
 [node name="SpawnArea" parent="." instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0354598, 11.9922, -70.0212 )
