@@ -25,5 +25,3 @@ script = ExtResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1.49897, 0, 0, 0, 1.23428, 0, 0, 0, 3.13188, 0, 1.47603, -0.155084 )
 shape = SubResource( 2 )
-
-[connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]

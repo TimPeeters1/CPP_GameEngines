@@ -29,6 +29,8 @@ func get_input():
 		velocity.x = lerp(velocity.x, 0, friction)
 		
 func _physics_process(delta):
-	get_input()
+	if(!GameManager.isGameOver):
+		get_input()
+		velocity = move_and_slide(velocity, Vector3.UP)
+		
 	velocity.y -= gravity * delta;
-	velocity = move_and_slide(velocity, Vector3.UP)

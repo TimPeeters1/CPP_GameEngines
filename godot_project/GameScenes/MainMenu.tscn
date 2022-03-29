@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GameScenes/MainEnv.tres" type="Environment" id=1]
-[ext_resource path="res://GameplayScenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://GDScripts/MainMenu.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
