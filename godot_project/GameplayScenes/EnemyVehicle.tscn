@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://GDScripts/EnemyVehicle_RB.gd" type="Script" id=1]
+[ext_resource path="res://bin/EnemyVehicle.gdns" type="Script" id=1]
 [ext_resource path="res://ModelScenes/CarModelEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Models/EnemyVehicle_PhysMa.tres" type="PhysicsMaterial" id=3]
 
@@ -15,8 +15,6 @@ mass = 3.0
 physics_material_override = ExtResource( 3 )
 axis_lock_angular_y = true
 script = ExtResource( 1 )
-max_speed = 20
-acceleration = 0.2
 
 [node name="CarModel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 5.36442e-06, -1.19209e-07 )

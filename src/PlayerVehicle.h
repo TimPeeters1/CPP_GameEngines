@@ -1,8 +1,7 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef PLAYERVEHICLE_H
+#define PLAYERVEHICLE_H
 
 #include <Godot.hpp>
-#include <Sprite.hpp>
 #include <Input.hpp>
 #include <Spatial.hpp>
 #include <Vector3.hpp>
