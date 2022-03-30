@@ -11,10 +11,13 @@
 #include <Timer.hpp>
 #include <RandomNumberGenerator.hpp>
 
+#include "GameManager.h"
+
 namespace godot
 {
-    class EnemyVehicle : public RigidBody {
-       GODOT_CLASS(EnemyVehicle, RigidBody)
+    class EnemyVehicle : public RigidBody
+    {
+        GODOT_CLASS(EnemyVehicle, RigidBody)
 
     private:
         float max_speed = 30;
@@ -25,10 +28,12 @@ namespace godot
 
         Vector3 velocity = Vector3();
 
-        Timer* addForceTimer;
-        Timer* killTimer;
+        Timer *addForceTimer = Timer::_new();
+        Timer *killTimer = Timer::_new();
 
-        RandomNumberGenerator* randomGenerator = RandomNumberGenerator::_new();;
+        GameManager *gameManager;
+        RandomNumberGenerator *randomGenerator = RandomNumberGenerator::_new();
+        ;
 
         bool hasDied = false;
 
@@ -43,14 +48,16 @@ namespace godot
         void _ready();
 
         void _physics_process(float delta);
-        
+
         void _integrate_forces(float delta);
 
         void onAddForceSideways();
 
         void onHitPlayer();
-        
+
         void onHitKillzone();
+
+        void onDeathTimeout();
     };
 
 }

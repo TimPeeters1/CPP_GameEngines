@@ -22,7 +22,7 @@ namespace godot {
 
         void _ready();
 
-        void on_body_entered(Node body);
+        void on_body_entered(Variant body);
     };
 
 }

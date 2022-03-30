@@ -1,9 +1,11 @@
 #include "PlayerCollision.h"
+#include "EnemyVehicle.h"
 
 using namespace godot;
 
 void PlayerCollision::_register_methods() {
     register_method("_ready", &PlayerCollision::_ready);
+    register_method("on_body_entered", &PlayerCollision::on_body_entered);
 }
 
 PlayerCollision::PlayerCollision() {
@@ -21,7 +23,10 @@ void PlayerCollision::_ready() {
     connect("body_entered", this, "on_body_entered");
 }
 
-void PlayerCollision::on_body_entered(Node body)
+void PlayerCollision::on_body_entered(Variant body)
 {
-    if(body.has_method(""))
+    if(cast_to<EnemyVehicle>(body)){
+        EnemyVehicle* enemyObject = cast_to<EnemyVehicle>(body);
+        enemyObject->onHitPlayer();
+    }
 }

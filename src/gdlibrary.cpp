@@ -1,6 +1,7 @@
 #include "EnemyVehicle.h"
 #include "GameManager.h"
 #include "gdexample.h"
+#include "PlayerCollision.h"
 #include "PlayerVehicle.h"
 #include "SpawnArea.h"
 
@@ -18,6 +19,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
      godot::register_class<godot::EnemyVehicle>();
      godot::register_class<godot::GameManager>();
      godot::register_class<godot::GDExample>();
+     godot::register_class<godot::PlayerCollision>();
      godot::register_class<godot::PlayerVehicle>();
      godot::register_class<godot::SpawnArea>();
 

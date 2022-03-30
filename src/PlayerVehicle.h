@@ -8,21 +8,27 @@
 #include <KinematicBody.hpp>
 #include <Math.hpp>
 
-namespace godot {
+#include "GameManager.h"
 
-    class PlayerVehicle : public KinematicBody {
+namespace godot
+{
+
+    class PlayerVehicle : public KinematicBody
+    {
         GODOT_CLASS(PlayerVehicle, KinematicBody)
 
     private:
-      float movementSpeed = 5;
-      
-      float friction = (float)0.1;
-      float acceleration = (float)0.1;
-      float gravity = (float)30;
+        float max_speed = 5;
 
-      float input_dir = 0;
+        float friction = (float)0.1;
+        float acceleration = (float)0.1;
+        float gravity = (float)30;
 
-      Vector3 velocity = Vector3();
+        float input_dir = 0;
+
+        Vector3 velocity = Vector3();
+
+        GameManager *gameManager;
 
     public:
         static void _register_methods();
@@ -32,8 +38,10 @@ namespace godot {
 
         void _init();
 
+        void _ready();
+
         void _physics_process(float delta);
-        
+
         void get_input();
     };
 

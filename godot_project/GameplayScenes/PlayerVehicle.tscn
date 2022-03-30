@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ModelScenes/CarModel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GDScripts/PlayerCollision.gd" type="Script" id=2]
+[ext_resource path="res://bin/PlayerCollision.gdns" type="Script" id=2]
 [ext_resource path="res://bin/PlayerVehicle.gdns" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape" id=1]
@@ -12,6 +12,10 @@ points = PoolVector3Array( 0.0131173, 0.0281628, -0.00723507, -0.0123927, -0.025
 [node name="PlayerVehicle" type="KinematicBody"]
 motion/sync_to_physics = true
 script = ExtResource( 3 )
+movementSpeed = null
+friction = null
+acceleration = null
+gravity = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 100, 0, 0, 0, -3.57628e-05, 100, 0, -100, -3.57628e-05, 0, 1.5, 0 )
