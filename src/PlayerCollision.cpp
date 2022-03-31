@@ -12,7 +12,7 @@ PlayerCollision::PlayerCollision() {
 }
 
 PlayerCollision::~PlayerCollision() {
-    // add your cleanup here
+
 }
 
 void PlayerCollision::_init() {

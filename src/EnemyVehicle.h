@@ -55,7 +55,7 @@ namespace godot
 
         void onHitPlayer();
 
-        void onHitKillzone();
+        void onHitKillzone(bool deducePlayerHealth);
 
         void onDeathTimeout();
     };

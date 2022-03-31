@@ -6,7 +6,7 @@
 [ext_resource path="res://bin/GameManager.gdns" type="Script" id=4]
 [ext_resource path="res://GameScenes/MainEnv.tres" type="Environment" id=5]
 [ext_resource path="res://GameplayScenes/GameManager.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GameplayScenes/EnemyKillzone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameplayScenes/Killzone.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -136,12 +136,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -36 )
 [node name="SpawnArea" parent="." instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0354598, 4.19251, -63.0032 )
 
-[node name="EnemyKillzone" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49144, 5.39683, 8.69755 )
-
 [node name="Floor" type="StaticBody" parent="."]
 collision_layer = 7
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 shape = SubResource( 1 )
+
+[node name="EnemyKillzone" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 11 )
+deduceHealth = true
+
+[node name="DefaultKillzone" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1.02285e-07, 0, 2.34, -1, -4.37114e-08, -4.37114e-08, 5.35683e-07, -12.255, 2.34155e-14, 0, -19.7955, -13.8345 )

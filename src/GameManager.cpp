@@ -53,6 +53,8 @@ void GameManager::deduceHealth(int healthToRemove)
         }else{
             currentPlayerHealth = newHealth;
         }
+
+        HealthText->set_text("PlayerHealth: " + String::num_int64(currentPlayerHealth) + "/" + String::num_int64(playerStartHealth));
     }
 }
 

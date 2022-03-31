@@ -76,7 +76,10 @@ void EnemyVehicle::onDeathTimeout()
     queue_free();
 }
 
-void EnemyVehicle::onHitKillzone()
+void EnemyVehicle::onHitKillzone(bool deduceHealth)
 {
+    if(deduceHealth)
+        gameManager->deduceHealth(1);
+        
     queue_free();
 }

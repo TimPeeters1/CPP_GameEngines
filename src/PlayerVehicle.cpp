@@ -29,7 +29,6 @@ void PlayerVehicle::_init()
 void PlayerVehicle::_ready()
 {
   gameManager = cast_to<GameManager>(get_node("/root/Main/GameManager"));
-  Godot::print(gameManager->get_name());
 }
 
 void PlayerVehicle::get_input()
